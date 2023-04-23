@@ -22,5 +22,14 @@ RSpec.describe 'Bachelorette Contestants Index Page' do
         expect(page).to_not have_content(@contestant_4.hometown)
       end
     end
+
+    it 'I see a link to each contestants show page' do
+      visit bachelorette_contestants_path(@bachelorette_1)
+      within "#contestant-#{@contestant_1.id}" do
+        expect(page).to have_link(@contestant_1.name)
+        click_link @contestant_1.name
+        expect(current_path).to eq(contestant_path(@contestant_1))
+      end
+    end
   end
 end

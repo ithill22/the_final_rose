@@ -1,3 +1,5 @@
+require 'simplecov'
+SimpleCov.start
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
@@ -78,4 +80,16 @@ def test_data
   @contestant_4 = @bachelorette_2.contestants.create!(name: "Eric Bigger", age: 30, hometown: "Chicago, IL")
   @contestant_5 = @bachelorette_2.contestants.create!(name: "Wills Reid", age: 28, hometown: "New York, NY")
   @contestant_6 = @bachelorette_2.contestants.create!(name: "Mike Johnson", age: 29, hometown: "Dallas, TX")
+
+  @outing_1 = Outing.create!(name: "Helicopter Ride", location: "Bali", date: "2019-12-19")
+  @outing_2 = Outing.create!(name: "Hot Air Balloon Ride", location: "Paris", date: "2019-12-20")
+  @outing_3 = Outing.create!(name: "Boat Ride", location: "Venice", date: "2019-12-21")
+  @outing_4 = Outing.create!(name: "Horseback Riding", location: "Rome", date: "2019-12-22")
+
+  @contestant_outing_1 = ContestantOuting.create!(outing: @outing_1, contestant: @contestant_1)
+  @contestant_outing_2 = ContestantOuting.create!(outing: @outing_1, contestant: @contestant_2)
+  @contestant_outing_3 = ContestantOuting.create!(outing: @outing_1, contestant: @contestant_3)
+  @contestant_outing_4 = ContestantOuting.create!(outing: @outing_2, contestant: @contestant_1)
+  @contestant_outing_5 = ContestantOuting.create!(outing: @outing_2, contestant: @contestant_2)
+  @contestant_outing_6 = ContestantOuting.create!(outing: @outing_3, contestant: @contestant_1)
 end
