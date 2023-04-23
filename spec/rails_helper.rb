@@ -76,7 +76,7 @@ def test_data
 
   @contestant_1 = @bachelorette_1.contestants.create!(name: "Chad Smith", age: 25, hometown: "Denver, CO")
   @contestant_2 = @bachelorette_1.contestants.create!(name: "Peter Weber", age: 28, hometown: "Los Angeles, CA")
-  @contestant_3 = @bachelorette_1.contestants.create!(name: "Tyler Cameron", age: 26, hometown: "Miami, FL")
+  @contestant_3 = @bachelorette_1.contestants.create!(name: "Tyler Cameron", age: 26, hometown: "Denver, CO")
   @contestant_4 = @bachelorette_2.contestants.create!(name: "Eric Bigger", age: 30, hometown: "Chicago, IL")
   @contestant_5 = @bachelorette_2.contestants.create!(name: "Wills Reid", age: 28, hometown: "New York, NY")
   @contestant_6 = @bachelorette_2.contestants.create!(name: "Mike Johnson", age: 29, hometown: "Dallas, TX")

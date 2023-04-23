@@ -31,5 +31,17 @@ RSpec.describe 'Bachelorette Contestants Index Page' do
         expect(current_path).to eq(contestant_path(@contestant_1))
       end
     end
+
+    it 'I see a list of unique hometowns for the bachelorettes contestants' do
+      visit bachelorette_contestants_path(@bachelorette_1)
+      save_and_open_page
+      within '#hometown-list' do
+        expect(page).to have_content(@contestant_1.hometown, count: 1)
+        expect(page).to have_content(@contestant_2.hometown, count: 1)
+        expect(page).to have_content(@contestant_3.hometown, count: 1)
+        expect(page).to_not have_content(@contestant_1.hometown, count: 2)
+        expect(page).to_not have_content(@contestant_4.hometown)
+      end
+    end
   end
 end

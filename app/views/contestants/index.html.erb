@@ -9,3 +9,9 @@
     </li>
   <% end %>
 </ul>
+<h3>Contestant Hometowns:</h3>
+<ul id="hometown-list">
+  <% @bachelorette.unique_hometowns.each do |hometown| %>
+    <li><%= hometown %></li>
+  <% end %>
+</ul>

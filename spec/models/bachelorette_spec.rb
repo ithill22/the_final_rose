@@ -18,5 +18,10 @@ RSpec.describe Bachelorette, type: :model do
       expect(@bachelorette_1.average_contestant_age).to eq(26.33)
       expect(@bachelorette_2.average_contestant_age).to eq(29.0)
     end
+
+    it 'unique_hometowns' do
+      expect(@bachelorette_1.unique_hometowns).to eq(["Denver, CO", "Los Angeles, CA"])
+      expect(@bachelorette_2.unique_hometowns).to eq(["Chicago, IL", "New York, NY", "Dallas, TX"])
+    end
   end
 end
