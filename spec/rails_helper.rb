@@ -67,3 +67,15 @@ RSpec.configure do |config|
   end
 end
 end
+
+def test_data
+  @bachelorette_1 = Bachelorette.create!(name: "Hannah Brown", season_number: 15, season_description: "The Most Dramatic Season Yet!")
+  @bachelorette_2 = Bachelorette.create!(name: "Rachel Lindsay", season_number: 13, season_description: "The Wildest One!")
+
+  @contestant_1 = @bachelorette_1.contestants.create!(name: "Chad Smith", age: 25, hometown: "Denver, CO")
+  @contestant_2 = @bachelorette_1.contestants.create!(name: "Peter Weber", age: 28, hometown: "Los Angeles, CA")
+  @contestant_3 = @bachelorette_1.contestants.create!(name: "Tyler Cameron", age: 26, hometown: "Miami, FL")
+  @contestant_4 = @bachelorette_2.contestants.create!(name: "Eric Bigger", age: 30, hometown: "Chicago, IL")
+  @contestant_5 = @bachelorette_2.contestants.create!(name: "Wills Reid", age: 28, hometown: "New York, NY")
+  @contestant_6 = @bachelorette_2.contestants.create!(name: "Mike Johnson", age: 29, hometown: "Dallas, TX")
+end
